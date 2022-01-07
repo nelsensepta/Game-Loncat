@@ -8,25 +8,34 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <header>
-      <nav class="nav">
-        <div class="title_head">
-          <h1>Game Loncat-loncat</h1>
-        </div>
-        <div class="login">
-          <button class="btn-login" id="modal-btn">Login</button>
-        </div>
-      </nav>
-    </header>
-    <main>
-      <img class="stone" src="assets/img/STONE 01.svg" />
-      <img class="stone" src="assets/img/STONE 02.svg" />
-      <img class="stone" src="assets/img/STONE 03.svg" />
+    <img class="stone" src="assets/img/STONE 01.svg" />
+    <img class="stone" src="assets/img/STONE 02.svg" />
+    <img class="stone" src="assets/img/STONE 03.svg" />
+    <div class="container">
+      <h1 class="title_head">Game Loncat-loncat</h1>
       <div id="form-login">
-        <img class="form-login-image" src="assets/img/FORM LOGIN.svg" alt="" />
-        <form action=""></form>
+        <!-- <img class="form-login-image" src="assets/img/FORM LOGIN.svg" alt="" /> -->
+        <form action="#" onsubmit="return false" class="log-in">
+          <label for="log-username">Name</label>
+          <input
+            type="text"
+            placeholder="Username"
+            minlength="4"
+            maxlength="20"
+            id="log-username"
+          />
+          <label for="log-password">Password</label>
+          <input
+            type="password"
+            placeholder="Password"
+            minlength="6"
+            maxlength="50"
+            id="log-password"
+          />
+          <input type="submit" id="submit" value="ok" />
+        </form>
       </div>
-    </main>
+    </div>
     <!-- Modal -->
     <!-- <div class="overlay" id="overlay"></div>
     <div class="modal" id="modal">

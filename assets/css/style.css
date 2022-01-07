@@ -7,191 +7,55 @@
 }
 html {
   width: 100%;
-  height: 100vh;
   overflow: hidden;
-  scroll-behavior: smooth;
+  height: 100vh;
 }
 body {
-  background-image: url("assets/img/BACKGROUND.svg");
+  background-image: url("../img/BACKGROUND.svg");
   background-repeat: no-repeat;
   background-position: 0 -150px;
   background-size: cover;
+  /* position: relative; */
 }
 header {
   margin-top: 2rem;
   padding: 0 1rem;
-  margin-bottom: 2rem;
-}
-.nav {
-  display: flex;
-  justify-content: space-evenly;
-}
-.login {
-  display: flex;
-  justify-content: flex-end;
-}
-.title_head {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
 }
 
-.btn-login {
-  background: linear-gradient(to right, #7145e8 5%, #3c70c9 100%);
-  background-color: #7145e8;
-  border-radius: 28px;
-  border: 1px solid #31258f;
-  display: inline-block;
-  cursor: pointer;
-  color: #ffffff;
-  font-size: 17px;
-  padding: 16px 31px;
-  text-decoration: none;
-  text-shadow: 0px 1px 0px #1044e0;
+.title_head {
+  color: #fff;
+  text-align: center;
 }
-.myButton:hover {
-  background: linear-gradient(to bottom, #3c70c9 5%, #7145e8 100%);
-  background-color: #3c70c9;
-}
-.myButton:active {
+.container {
   position: relative;
-  top: 1px;
+  min-height: 100vh;
 }
 
 .stone {
   position: absolute;
 }
+
 #form-login {
-  display: flex;
-  justify-content: center;
+  background-image: url("../img/FORM\ LOGIN.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 350px;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  margin: 3rem auto;
+  z-index: 99;
 }
-.form-login-image {
+/* .form-login-image {
   height: auto;
   width: 300px;
   z-index: 999;
-}
-main {
-  min-height: 100vh;
-}
-
-.container {
-  padding: 0 1rem;
-}
-
-.home {
-  justify-content: center;
-  display: flex;
-  flex-direction: row;
-}
-
-.home div {
-  display: flex;
-  min-height: 90vh;
-  flex-direction: column;
-}
-
-.home div:nth-child(1) {
-  justify-content: center;
-}
-.home div:nth-child(2) {
-  position: relative;
-  justify-content: flex-end;
-}
-.home div:nth-child(3) {
-  justify-content: flex-start;
-}
-
-.hero {
-  /* background-color: blue; */
-  position: absolute;
-  bottom: 75px;
-  margin: 0 auto;
-  left: 0;
-  right: 0;
-}
-
-/* Modal */
-.btn {
-  font-size: 14px;
-  line-height: 1.4;
-  padding: 13px 20px;
-  border-radius: 4px;
-  transition: box-shadow 0.1s, top 0.1s;
-  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.3);
-  top: 0;
-  background: #fff;
-}
-.btn:hover {
-  box-shadow: 0 3px 0 transparent;
-  top: 3px;
-}
-.btn:active {
-  background: #f2f2f2;
-}
-
-/** Modal */
-.modal {
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.3s;
-  position: absolute;
-  top: 100px;
-  max-height: 450px;
-  align-items: center;
-  margin: 0 auto;
-  left: 0;
-  background: rgb(2, 0, 36);
-  background: linear-gradient(
-    90deg,
-    rgba(2, 0, 36, 1) 6%,
-    rgba(122, 11, 233, 1) 46%,
-    rgba(72, 0, 255, 1) 84%
-  );
-  right: 0;
-  max-width: 400px;
-  padding: 30px;
-  border-radius: 4px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
-}
-.modal-close-btn {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  background-color: red;
-  font-size: 25px;
-}
-
-/* .icon-btn {
-  background-color: red;
 } */
-
-/** Overlay */
-.overlay {
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.3s;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-/** JS */
-.is-visible {
-  opacity: 1;
-  pointer-events: auto;
-}
 
 /* Login Page */
 
 .log-in {
+  z-index: 999;
+  padding-top: 5rem;
   text-align: center;
   color: aliceblue;
 }
@@ -245,4 +109,11 @@ main {
 #submit:hover {
   cursor: pointer;
   width: 120px;
+}
+
+@media only screen and (max-width: 640px) {
+  body {
+    overflow: hidden;
+    background-position: center;
+  }
 }

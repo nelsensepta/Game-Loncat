@@ -12,20 +12,20 @@
 //   document.getElementById("modal").classList.remove("is-visible");
 // });
 
-// // Ambil Input Modal
-// let username = document.getElementById("log-username").value;
-// let password = document.getElementById("log-password").value;
-// document
-//   .getElementById("submit")
-//   .addEventListener("click", tampilkan_nilai_form);
+// Ambil Input Modal
+let username = document.getElementById("log-username").value;
+let password = document.getElementById("log-password").value;
+document
+  .getElementById("submit")
+  .addEventListener("click", tampilkan_nilai_form);
 
-// function tampilkan_nilai_form() {
-//   var username = document.getElementById("log-username").value;
-//   var password = document.getElementById("log-password").value;
-//   if (username === "admin123" && password === "password") {
-//     document.location.href = "game.html";
-//   }
-// }
+function tampilkan_nilai_form() {
+  var username = document.getElementById("log-username").value;
+  var password = document.getElementById("log-password").value;
+  if (username === "admin123" && password === "password") {
+    document.location.href = "game.html";
+  }
+}
 
 // Animation
 const stone = document.querySelectorAll(".stone");
@@ -38,15 +38,15 @@ const Stone = {
     console.log(this.stone1Y);
     stone[0].style.top = this.stone1Y + "px";
     stone[0].style.left = (window.innerWidth * 1) / 2 - 200 + "px";
-    stone[0].style.width = "400px";
+    stone[0].style.width = "250px";
 
     stone[1].style.top = this.stone2Y + "px";
-    stone[1].style.left = (window.innerWidth * 1) / 4 - 200 + "px";
-    stone[1].style.width = "400px";
+    stone[1].style.left = (window.innerWidth * 1) / 2 - 200 + "px";
+    stone[1].style.width = "250px";
 
     stone[2].style.top = this.stone3Y + "px";
-    stone[2].style.left = (window.innerWidth * 3) / 4 - 200 + "px";
-    stone[2].style.width = "400px";
+    stone[2].style.left = (window.innerWidth * 3) / 3 - 200 + "px";
+    stone[2].style.width = "250px";
   },
   running: function () {
     setInterval(() => {
