@@ -45,7 +45,7 @@
 // Game
 
 var life = document.getElementById("life");
-var container = document.getElementById("container");
+// var container = document.getElementById("container");
 var player = document.getElementById("player");
 var score = document.getElementById("score");
 var playerLeft = player.offsetLeft;
@@ -82,7 +82,6 @@ if (window.DeviceMotionEvent != undefined) {
     ax = event.accelerationIncludingGravity.x * 5;
     ay = event.accelerationIncludingGravity.y * 5;
   };
-  console.log((vx += 1));
   setInterval(function () {
     var landscapeOrientation = window.innerWidth / window.innerHeight > 1;
     if (landscapeOrientation) {
@@ -94,8 +93,8 @@ if (window.DeviceMotionEvent != undefined) {
     }
     vx = vx * 0.98;
     vy = vy * 0.98;
-    y = parseInt(y1 + vy / 50);
-    x = parseInt(x1 + vx1 / 50);
+    y = parseInt(y + vy / 50);
+    x = parseInt(x + vx / 50);
 
     boundingBoxCheck();
 
@@ -106,7 +105,7 @@ if (window.DeviceMotionEvent != undefined) {
 function boundingBoxCheck() {
   if (x < 0) {
     x = 0;
-    vx = -vx1;
+    vx = -vx;
   }
   if (y < 0) {
     y = 0;
