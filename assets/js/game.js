@@ -72,12 +72,8 @@ console.log(playerRight);
 // Player Detection
 var x1 = 0,
   y1 = 0,
-  // x2 = 0,
-  // y2 = 0,
   vx1 = 0,
   vy1 = 0,
-  // vx2 = 0,
-  // vy2 = 0,
   ax1 = 0,
   ay1 = 0;
 
@@ -91,13 +87,9 @@ if (window.DeviceMotionEvent != undefined) {
     if (landscapeOrientation) {
       vx1 = vx1 + ay1;
       vy1 = vy1 + ax1;
-      // vx2 = vx2 + ay1;
-      // vy2 = vy2 + ax1;
     } else {
       vy1 = vy1 - ay1;
       vx1 = vx1 + ax1;
-      // vy2 = vy2 - ay1;
-      // vx2 = vx2 + ax1;
     }
     vx1 = vx1 * 0.98;
     vy1 = vy1 * 0.98;
