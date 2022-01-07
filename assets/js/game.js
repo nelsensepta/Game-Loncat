@@ -70,81 +70,56 @@ console.log(playerRight);
 // });
 
 // Player Detection
-var x1 = 0,
-  y1 = 0,
-  vx1 = 0,
-  vy1 = 0,
-  ax1 = 0,
-  ay1 = 0;
+var x = 0,
+  y = 0,
+  vx = 0,
+  vy = 0,
+  ax = 0,
+  ay = 0;
 
 if (window.DeviceMotionEvent != undefined) {
   window.ondevicemotion = function (e) {
-    ax1 = event.accelerationIncludingGravity.x * 5;
-    ay1 = event.accelerationIncludingGravity.y * 5;
+    ax = event.accelerationIncludingGravity.x * 5;
+    ay = event.accelerationIncludingGravity.y * 5;
   };
+  console.log((vx += 1));
   setInterval(function () {
     var landscapeOrientation = window.innerWidth / window.innerHeight > 1;
     if (landscapeOrientation) {
-      vx1 = vx1 + ay1;
-      vy1 = vy1 + ax1;
+      vx += ay;
+      vy += ax;
     } else {
-      vy1 = vy1 - ay1;
-      vx1 = vx1 + ax1;
+      vy -= ay;
+      vx += ax;
     }
-    vx1 = vx1 * 0.98;
-    vy1 = vy1 * 0.98;
-    y1 = parseInt(y1 + vy1 / 50);
-    x1 = parseInt(x1 + vx1 / 50);
-
-    // vx2 = vx2 * 0.98;
-    // vy2 = vy2 * 0.98;
-    // y2 = parseInt(y2 + vy2 / 30);
-    // x2 = parseInt(x2 + vx2 / 30);
+    vx = vx * 0.98;
+    vy = vy * 0.98;
+    y = parseInt(y1 + vy / 50);
+    x = parseInt(x1 + vx1 / 50);
 
     boundingBoxCheck();
 
-    player.style.top = y1 + "px";
-    player.style.left = x1 + "px";
+    player.style.top = y + "px";
+    player.style.left = x + "px";
   }, 25);
 }
 function boundingBoxCheck() {
-  if (x1 < 0) {
-    x1 = 0;
-    vx1 = -vx1;
+  if (x < 0) {
+    x = 0;
+    vx = -vx1;
   }
-  if (y1 < 0) {
-    y1 = 0;
-    vy1 = -vy1;
+  if (y < 0) {
+    y = 0;
+    vy = -vy;
   }
-  if (x1 > document.documentElement.clientWidth - 50) {
-    x1 = document.documentElement.clientWidth - 50;
-    vx1 = -vx1;
+  if (x > document.documentElement.clientWidth - 20) {
+    x = document.documentElement.clientWidth - 20;
+    vx = -vx;
   }
-  if (y1 > document.documentElement.clientHeight - 50) {
-    y1 = document.documentElement.clientHeight - 50;
-    vy1 = -vy1;
+  if (y > document.documentElement.clientHeight - 20) {
+    y = document.documentElement.clientHeight - 20;
+    vy = -vy;
   }
-  // if (x2 < 0) {
-  //   x2 = 0;
-  //   vx2 = -vx2;
-  // }
-  // if (y2 < 0) {
-  //   y2 = 0;
-  //   vy2 = -vy2;
-  // }
-  // if (x2 > document.documentElement.clientWidth - 50) {
-  //   x2 = document.documentElement.clientWidth - 50;
-  //   vx2 = -vx2;
-  // }
-  // if (y2 > document.documentElement.clientHeight - 50) {
-  //   y2 = document.documentElement.clientHeight - 50;
-  //   vy2 = -vy2;
-  // }
-}
-
-if (playerLeft > playerRight) {
-  console.log("Benar");
-  player.style.right = playerLeft - 200 + "px";
 }
 
 // Stone
@@ -179,45 +154,6 @@ createStone(2);
 //   // stone3Y > window.innerHeight && (createStone(3).style.top = 0 + "px");
 // }, 10);
 
-// var moveStone = setInterval(function () {
-//   var stones = document.getElementsByClassName("stone");
-//   var bullets = document.getElementsByClassName("bullet");
-//   for (var i = 0; i < stones.length; i++) {
-//     var stone = stones[i];
-//     var stoneTop = stone.offsetTop;
-//     stoneTop += 7;
-//     stone.style.top = stoneTop + "px";
-//     var height = document.body.offsetHeight - 200;
-//     if (stoneTop >= height) {
-//       stone.remove();
-//     }
-
-//     if (touching(player, stone)) {
-//       player.classList.add("boom");
-//       playerLife--;
-//       life.innerHTML = "life:" + playerLife;
-//       stone.remove();
-//       setTimeout(function () {
-//         player.classList.remove("boom");
-//       }, 400);
-//     }
-
-//     if (playerLife == 0) {
-//       gameOver();
-//     }
-
-//     for (var j = 0; j < bullets.length; j++) {
-//       var bullet = bullets[j];
-//       if (touching(stone, bullet)) {
-//         bullet.remove();
-//         stone.remove();
-//         playerScore++;
-//         score.innerHTML = "score:" + playerScore;
-//       }
-//     }
-//   }
-// }, 27);
-
 function touching(element1, element2) {
   var rect1 = element1.getBoundingClientRect();
   var rect2 = element2.getBoundingClientRect();
@@ -233,5 +169,5 @@ function touching(element1, element2) {
 
 function gameOver() {
   clearInterval(createStone);
-  clearInterval(moveStone);
+  clearInterval(runStone);
 }
