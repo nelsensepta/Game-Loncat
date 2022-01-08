@@ -54,10 +54,6 @@ var playerRight = player.offsetRight;
 var playerScore = 0;
 var playerLife = 3;
 
-console.log(playerTop);
-console.log(playerLeft);
-console.log(playerRight);
-
 // document.addEventListener("keydown", function (event) {
 //   if (event.keyCode == 32) {
 //     var stone = document.createElement("div");
@@ -79,8 +75,8 @@ var x = 0,
 
 if (window.DeviceMotionEvent != undefined) {
   window.ondevicemotion = function (e) {
-    ax = event.accelerationIncludingGravity.x * 5;
-    ay = event.accelerationIncludingGravity.y * 5;
+    ax = e.accelerationIncludingGravity.x * 5;
+    ay = e.accelerationIncludingGravity.y * 5;
   };
   setInterval(function () {
     var landscapeOrientation = window.innerWidth / window.innerHeight > 1;
@@ -91,15 +87,17 @@ if (window.DeviceMotionEvent != undefined) {
       vy -= ay;
       vx += ax;
     }
-    vx = vx * 0.98;
-    vy = vy * 0.98;
-    y = parseInt(y + vy / 50);
-    x = parseInt(x + vx / 50);
+    vx *= 0.98;
+    vy *= 0.98;
+    y = parseInt(y + vy / 20);
+    x = parseInt(x + vx / 20);
 
     boundingBoxCheck();
 
     player.style.top = y + "px";
-    player.style.left = x + "px";
+    player.style.right = vy + "px";
+    player.style.bottom = x + "px";
+    player.style.left = vx + "px";
   }, 25);
 }
 function boundingBoxCheck() {
@@ -131,14 +129,10 @@ var createStone = (number) => {
   return stone;
 };
 
-createStone(3);
-createStone(1);
-createStone(2);
+// var stone1Y = (window.innerHeight * 3) / 4;
+// var stone2Y = (window.innerHeight * 1) / 2;
+// var stone3Y = (window.innerHeight * 1) / 3;
 // var runStone = setInterval(function () {
-//   var stone1Y = (window.innerHeight * 3) / 4;
-//   var stone2Y = (window.innerHeight * 1) / 2;
-//   var stone3Y = (window.innerHeight * 1) / 3;
-
 //   createStone(1).style.left = (window.innerWidth * 1) / 2 - 200 + "px";
 //   createStone(1).style.top = stone1Y + "px";
 

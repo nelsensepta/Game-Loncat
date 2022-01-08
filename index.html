@@ -8,61 +8,37 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <img class="stone" src="assets/img/STONE 01.svg" />
-    <img class="stone" src="assets/img/STONE 02.svg" />
-    <img class="stone" src="assets/img/STONE 03.svg" />
     <div class="container">
-      <h1 class="title_head">Game Loncat-loncat</h1>
+      <div class="hero">
+        <div class="player1">
+          <img class="player" src="assets/img/JUMP.svg" />
+        </div>
+        <div class="player2">
+          <img class="player" src="assets/img/LANDING.svg" />
+        </div>
+        <div class="player3">
+          <img class="player" src="assets/img/FALL.svg" />
+        </div>
+      </div>
       <div id="form-login">
-        <!-- <img class="form-login-image" src="assets/img/FORM LOGIN.svg" alt="" /> -->
         <form action="#" onsubmit="return false" class="log-in">
-          <label for="log-username">Name</label>
-          <input
-            type="text"
-            placeholder="Username"
-            minlength="4"
-            maxlength="20"
-            id="log-username"
-          />
-          <label for="log-password">Password</label>
-          <input
-            type="password"
-            placeholder="Password"
-            minlength="6"
-            maxlength="50"
-            id="log-password"
-          />
-          <input type="submit" id="submit" value="ok" />
+          <div class="username">
+            <label for="log-username" class="user-title">Name</label>
+            <input type="text" minlength="4" maxlength="20" id="log-username" />
+          </div>
+          <div class="pass">
+            <label for="log-password" class="user-pass">Password</label>
+            <input
+              type="password"
+              minlength="4"
+              maxlength="50"
+              id="log-password"
+            />
+          </div>
+          <button type="submit" id="submit">ok</button>
         </form>
       </div>
     </div>
-    <!-- Modal -->
-    <!-- <div class="overlay" id="overlay"></div>
-    <div class="modal" id="modal">
-      <button class="modal-close-btn" id="close-btn">
-        <ion-icon name="close-outline" class="icon-btn"></ion-icon>
-      </button>
-      <form action="#" onsubmit="return false" class="log-in">
-        <h1 class="title">Login</h1>
-        <label for="log-username"></label>
-        <input
-          type="text"
-          placeholder="Username"
-          minlength="4"
-          maxlength="20"
-          id="log-username"
-        />
-        <label for="log-password"></label>
-        <input
-          type="password"
-          placeholder="Password"
-          minlength="6"
-          maxlength="50"
-          id="log-password"
-        />
-        <input type="submit" id="submit" value="ok" />
-      </form>
-    </div> -->
 
     <!-- Ionicons -->
     <script
@@ -74,6 +50,6 @@
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
 
-    <script src="assets/js/script.js"></script>
+    <!-- <script src="assets/js/script.js"></script> -->
   </body>
 </html>

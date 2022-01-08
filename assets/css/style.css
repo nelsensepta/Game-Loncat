@@ -8,31 +8,27 @@
 html {
   width: 100%;
   overflow: hidden;
-  height: 100vh;
 }
 body {
   background-image: url("../img/BACKGROUND.svg");
   background-repeat: no-repeat;
   background-position: 0 -150px;
   background-size: cover;
-  /* position: relative; */
-}
-header {
-  margin-top: 2rem;
-  padding: 0 1rem;
 }
 
-.title_head {
-  color: #fff;
-  text-align: center;
-}
 .container {
   position: relative;
-  min-height: 100vh;
+  height: 100vh;
 }
 
-.stone {
-  position: absolute;
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.player1 {
+  display: flex;
 }
 
 #form-login {
@@ -40,80 +36,66 @@ header {
   background-repeat: no-repeat;
   background-size: contain;
   width: 350px;
-  align-items: center;
-  min-height: 100vh;
-  margin: 3rem auto;
+  padding: 5.5rem 4rem;
+  margin: 8rem auto;
   z-index: 99;
 }
-/* .form-login-image {
-  height: auto;
-  width: 300px;
-  z-index: 999;
-} */
 
 /* Login Page */
 
 .log-in {
   z-index: 999;
-  padding-top: 5rem;
-  text-align: center;
   color: aliceblue;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
-.title {
-  padding-top: 30px;
+.username {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.pass {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 #log-username {
-  display: block;
-  text-align: center;
-  border: 2px solid rgb(50, 197, 255);
-  border-radius: 40px;
-  padding: 11px 30px;
-  width: 160px;
+  border: 2px solid rgb(246, 251, 253);
+  padding: 7px;
   background: none;
-  margin: 20px auto;
+  margin-top: 5px;
   transition: 0.25s;
   color: aliceblue;
 }
 
 #log-password {
-  display: block;
-  text-align: center;
-  border: 2px solid rgb(50, 197, 255);
-  border-radius: 40px;
-  padding: 11px 30px;
-  width: 160px;
+  border: 2px solid rgb(246, 251, 253);
+  padding: 7px;
   background: none;
-  margin: 20px auto;
+  margin-top: 5px;
   transition: 0.25s;
   color: aliceblue;
 }
 
 #submit {
-  border: 2px solid rgb(17, 255, 96);
-  background: rgb(17, 255, 96);
+  background: none;
+  border-radius: 50%;
   color: aliceblue;
-  padding: 11px 20px;
-  border-radius: 40px;
-  margin-bottom: 30px;
-  width: 100px;
+  padding: 10px;
+  margin: 30px auto;
+  display: flex;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
   transition: 0.25s;
-}
-
-#log-username:hover,
-#log-password:hover {
-  width: 200px;
-}
-
-#submit:hover {
-  cursor: pointer;
-  width: 120px;
 }
 
 @media only screen and (max-width: 640px) {
   body {
-    overflow: hidden;
+    /* overflow: hidden; */
     background-position: center;
   }
 }
