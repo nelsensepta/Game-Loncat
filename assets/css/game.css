@@ -20,6 +20,22 @@ body {
   overflow: hidden;
   min-height: 100vh;
 }
+.form-login {
+  background-image: url("../img/FORM\ LOGIN.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 350px;
+  padding: 5.5rem 4rem;
+  margin: 8rem auto;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.user {
+  font-weight: bold;
+}
 .stone {
   display: flex;
   position: absolute;

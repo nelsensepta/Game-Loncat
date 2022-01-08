@@ -23,6 +23,7 @@ function tampilkan_nilai_form() {
   var username = document.getElementById("log-username").value;
   var password = document.getElementById("log-password").value;
   if (username === "admin123" && password === "password") {
+    localStorage.setItem("username", "admin123");
     document.location.href = "game.html";
   }
 }
