@@ -6,10 +6,6 @@
   box-sizing: border-box;
 }
 
-html {
-  width: 100%;
-  overflow: hidden;
-}
 body {
   background-image: url("../img/BACKGROUND.svg");
   background-repeat: no-repeat;
@@ -17,43 +13,56 @@ body {
   background-size: cover;
 }
 .container {
-  overflow: hidden;
+  padding: 0 1rem;
   min-height: 100vh;
+  width: 100%;
+  /* overflow: hidden; */
+  position: relative;
 }
 .form-login {
   background-image: url("../img/FORM\ LOGIN.svg");
   background-repeat: no-repeat;
   background-size: contain;
   width: 350px;
+  height: 400px;
   padding: 5.5rem 4rem;
-  margin: 8rem auto;
+  margin: 2rem auto;
   z-index: 99;
+  opacity: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 .user {
   font-weight: bold;
 }
 .stone {
-  display: flex;
   position: absolute;
-  width: 250px;
-  height: 300px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
+  width: 230px;
+  background-image: url("../img/STONE\ 02.svg");
+  height: 200px;
 }
 
-.player {
+.player_landing {
   background-image: url("../img/LANDING.svg");
-  width: 200px;
-  height: 150px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
+  width: 200px;
+  height: 150px;
   position: absolute;
+  z-index: 9999;
+  bottom: 0;
+}
+.player_jump {
+  background-image: url("../img/JUMP.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 200px;
+  height: 150px;
+  position: absolute;
+  z-index: 9999;
   bottom: 0;
 }
 
@@ -76,4 +85,26 @@ body {
   font-size: 3rem;
   color: rgb(189, 252, 231);
   text-transform: uppercase;
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.right {
+  background-image: url("../img/left.png");
+  background-repeat: no-repeat;
+  width: 75px;
+  height: 75px;
+  transform: rotate(180deg);
+  background-size: contain;
+}
+.left {
+  background-image: url("../img/left.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 75px;
+  height: 75px;
 }
